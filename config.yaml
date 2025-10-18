@@ -1,0 +1,47 @@
+inference: false
+inference_out_dir: output
+model:
+  class_name: model.ar_rig_diffusion.RigARDiffusion
+  diffusion:
+    d: 3
+    grad_checkpointing: false
+    num_sampling_steps: '300'
+    w: 1024
+  joints_tokenizer:
+    in_channels: 3
+    middle_channels: 512
+    n_joints: 64
+  pc_tokenizer:
+    in_channels: 6
+    middle_channels: 512
+    n_points: 1024
+  transformer:
+    d: 1024
+    d_head: 16
+    n_layer: 12
+training:
+  amp_dtype: bf16
+  batch_size_per_gpu: 12
+  beta1: 0.9
+  beta2: 0.95
+  checkpoint_dir: ckpt/ckpt.pt
+  checkpoint_dir_s3: None
+  grad_accum_steps: 1
+  grad_checkpoint_every: 1
+  l2_warmup_steps: 500
+  lpips_loss_weight: 0.0
+  lr: 0.0001
+  max_fwdbwd_passes: 100000
+  num_epochs: 100000
+  perceptual_loss_weight: 0.5
+  pointsdist_loss_weight: 0.0
+  reset_lr: false
+  reset_training_state: true
+  reset_weight_decay: false
+  resume_ckpt: ckpt/ckpt.pt
+  use_amp: true
+  use_tf32: true
+  wandb_exp_name: None
+  warmup: 500
+  warmup_pointsdist: false
+  weight_decay: 0.05
