@@ -2,6 +2,7 @@
 
 [![Paper](https://img.shields.io/badge/Paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/abs/2502.09615)
 [![Project Page](https://img.shields.io/badge/Project%20Page-000000?style=for-the-badge&logo=githubpages&logoColor=white)](https://www.liuisabella.com/RigAnything/)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Isabella98Liu/RigAnything)
 [![Hugging Face Models](https://img.shields.io/badge/Models-fcd022?style=for-the-badge&logo=huggingface&logoColor=000)](https://huggingface.co/Isabellaliu/RigAnything/tree/main)
 
 RigAnything predicts skeletons and skinning for diverse 3D assets without a fixed template. This repository provides inference scripts to rig your meshes (.glb or .obj) end‑to‑end and export a rigged GLB for use in DCC tools (e.g., Blender).
