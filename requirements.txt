@@ -1,5 +1,5 @@
 rich
-numpy
+numpy<2
 pyyaml
 matplotlib
 scikit-image
