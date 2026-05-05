@@ -260,7 +260,7 @@ def iter_dataset_npz(
 
         if category_filter is not None:
             cat = uuid_to_meta.get(uuid, {}).get("category_label", "")
-            if cat != category_filter:
+            if category_filter not in cat:
                 continue
 
         vertices = get(k_verts, i, np.float32)  # [V, 3]
@@ -316,14 +316,9 @@ def _sample_surface_points(
     Uniformly sample n surface points.
     Mirrors the sampling block in inference.py, plus replacement padding and normal normalisation.
     """
-    pts, face_idx = trimesh.sample.sample_surface_even(mesh, n)
+    pts, face_idx = trimesh.sample.sample_surface(mesh, n)
     pts = pts.astype(np.float32)
     nrms = mesh.face_normals[face_idx].astype(np.float32)
-
-    replace = n > pts.shape[0]
-    idx = np.random.choice(pts.shape[0], n, replace=replace)
-    pts = pts[idx]
-    nrms = nrms[idx]
     nrms = nrms / np.clip(np.linalg.norm(nrms, axis=1, keepdims=True), 1e-8, None)
     return pts, nrms
 

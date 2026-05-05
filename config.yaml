@@ -32,7 +32,7 @@ training:
   lpips_loss_weight: 0.0
   lr: 0.0001
   max_fwdbwd_passes: 100000
-  num_epochs: 100000
+  num_epochs: 100
   perceptual_loss_weight: 0.5
   pointsdist_loss_weight: 0.0
   reset_lr: false
